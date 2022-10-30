@@ -134,6 +134,12 @@ function main() {
 
     var labels = document.querySelectorAll("label")[1].classList.add("closest");
     countdown();
+    if (isBirthday()) {
+        document.querySelector("#my-canvas").classList.add("birthday");
+    }
+    else{
+        document.querySelector("#my-canvas").classList.remove("birthday");
+    }
 }
 
 function countdown() {
@@ -163,6 +169,11 @@ function reset() {
             ${diff_hours} || ${diff_minutes} || ${diff_seconds}` + "<br>";
         }
     }
+}
+
+function isBirthday() {
+    return (today.getDate() == sorted_peoples_dates[sorted_peoples_dates.length - 1].getDate() &&
+        today.getMonth() == sorted_peoples_dates[sorted_peoples_dates.length - 1].getMonth());
 }
 
 

@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <link rel="stylesheet" href="styles.css">
-        <meta charset="utf-8">
-        <title>Mivzaim's Birthdays!</title>
-        <link rel="icon" href="birthday_cake.ico" type="image/icon type">
-    </head>
-    <body>
-        <div class="dates"></div>
-        <script type="text/javascript" src="index.js"></script>
-    </body>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <title>Mivzaim's Birthdays!</title>
+    <link rel="icon" href="birthday_cake.ico" type="image/icon type">
+</head>
+
+<body>
+    <div class="dates"></div>
+
+    <canvas id="my-canvas"></canvas>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="index.min.js"></script>
+    <script type="text/javascript">
+        var confettiSettings = {
+            target: 'my-canvas'
+        };
+        var confetti = new ConfettiGenerator(confettiSettings);
+        if (document.getElementById('my-canvas').classList.contains("birthday")){
+            confetti.render();
+        }
+        else{
+            confetti.clear();
+        }
+    </script>
+</body>
+
 </html>
